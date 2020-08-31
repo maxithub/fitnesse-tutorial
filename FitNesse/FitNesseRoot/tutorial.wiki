@@ -1,0 +1,8 @@
+!contents -R2 -g -p -f -h
+
+!***> Classpath setting
+
+# load the classpath from maven pom.xml file
+!pomFile pom.xml
+
+*!
