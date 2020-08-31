@@ -6,7 +6,7 @@ MAX_ATTEMPT=5
 stop_app () {
   name=$1
   bin=$2
-  pid=`ps -ef|grep $bin|grep -v grep|grep -v kill|awk '{print $2}'`
+  pid=$(ps -ef|grep $bin|grep -v grep|grep -v kill|awk '{print $2}')
   if [ -n "$pid" ]; then
     echo "$name is running on process $pid, stopping it now"
     kill -15 $pid
@@ -16,7 +16,7 @@ stop_app () {
       sleep $INTERVAL
       let count=count+1
       echo "Checking if $name is successfully stopped, attemp #$count"
-      pid=`ps -ef|grep $bin|grep -v grep|grep -v kill|awk '{print $2}'`
+      pid=$(ps -ef|grep $bin|grep -v grep|grep -v kill|awk '{print $2}')
     done
 
     if [ -n "$pid" ]; then

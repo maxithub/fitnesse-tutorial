@@ -11,7 +11,7 @@ MAX_ATTEMPT=5
 
 mkdir -p $FIT_HOME
 
-pid=`ps -ef|grep $APP_BIN|grep -v grep|grep -v kill|awk '${print $2}'`
+pid=$(ps -ef|grep $APP_BIN|grep -v grep|grep -v kill|awk '${print $2}')
 if [ -n "$pid" ]; then
   echo "FitNesse is already running on process $pid"
 else
