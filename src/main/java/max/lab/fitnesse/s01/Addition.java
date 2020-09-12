@@ -11,6 +11,6 @@ public class Addition {
 	
 	public int result() {
 		log.info("Calculating a+b...");
-		return a + b;
+		return SuperComplexAddition.add(a, b);
 	}
 }

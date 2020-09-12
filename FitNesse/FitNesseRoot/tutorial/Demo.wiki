@@ -2,7 +2,9 @@
 Test
 ---
 !3 这是一个加法测试！
-| Addition |
-| a | b | result? |
-| 1 | 2 | 3 |
-| 3 | 2 | 5 |
+a+b=c
+
+|Addition   |
+|a|b|result?|
+|1|2|3      |
+|3|2|5      |
