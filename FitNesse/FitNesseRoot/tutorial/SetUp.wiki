@@ -1,4 +1,6 @@
 ---
 Test
 ---
-<test page>
+!4 Import the neccessary slim/fixtures
+| import |
+| max.lab.fitnesse.s01 |
