@@ -3,12 +3,11 @@
 APP_HOME="$(cd "$(dirname "$1")/.."; pwd)"
 APP_BIN=fitnesse-${fitnesse.version}.jar
 LOG_PATH=$APP_HOME/fitnesse.log
-FIT_HOME="$(cd "$APP_HOME/../fitnesseroot"; pwd)"
 PORT=${fitnesse.port}
 INTERVAL=3
 MAX_ATTEMPT=5
-
-mkdir -p $FIT_HOME
+FIT_ROOT=fitnesseroot
+FIT_HOME="$(cd "$APP_HOME/../"; mkdir -p $FIT_ROOT; cd $FIT_ROOT; pwd)"
 
 pid=$(ps -ef|grep $APP_BIN|grep -v grep|grep -v kill|awk '{print $2}')
 if [ -n "$pid" ]; then

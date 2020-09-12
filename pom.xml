@@ -87,7 +87,7 @@
                             <descriptors>
                                 <descriptor>src/main/assembly.xml</descriptor>
                             </descriptors>
-                            <finalName>fitnesse-with-dependency</finalName>
+                            <finalName>fitnesse</finalName>
                         </configuration>
                     </execution>
                 </executions>
