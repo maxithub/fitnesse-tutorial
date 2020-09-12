@@ -28,6 +28,12 @@
             <artifactId>fitnesse</artifactId>
             <version>${fitnesse.version}</version>
 <!--            <scope>provided</scope>-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-jdk14</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>

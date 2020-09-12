@@ -14,7 +14,7 @@ stop_app () {
     count=0
     while [ -n "$pid" ] && [ $count -lt $MAX_ATTEMPT ]; do
       sleep $INTERVAL
-      let count=count+1
+      count=$((count+1))
       echo "Checking if $name is successfully stopped, attemp #$count"
       pid=$(ps -ef|grep $bin|grep -v grep|grep -v kill|awk '{print $2}')
     done
@@ -30,4 +30,4 @@ stop_app () {
   fi
 }
 
-stop_app FitNesse fitnesse.jar
+stop_app FitNesse fitnesse-${fitnesse.version}.jar
