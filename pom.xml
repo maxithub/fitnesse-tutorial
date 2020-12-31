@@ -12,6 +12,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>13</java.version>
         <fitnesse.version>20200501</fitnesse.version>
+        <restfixture.version>4.4</restfixture.version>
+        <jackson.version>2.12.0</jackson.version>
+        <json-path.version>2.5.0</json-path.version>
+        <json-flattener.version>0.12.0</json-flattener.version>
         <maven-classpath-plugin.version>1.9</maven-classpath-plugin.version>
         <slf4j.version>1.7.25</slf4j.version>
         <logback.version>1.2.3</logback.version>
@@ -40,6 +44,54 @@
             <groupId>org.fitnesse.plugins</groupId>
             <artifactId>maven-classpath-plugin</artifactId>
             <version>${maven-classpath-plugin.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>smartrics.restfixture</groupId>
+            <artifactId>smartrics-RestFixture</artifactId>
+            <version>${restfixture.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jdk8</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>${json-path.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.wnameless.json</groupId>
+            <artifactId>json-flattener</artifactId>
+            <version>${json-flattener.version}</version>
         </dependency>
 
         <dependency>

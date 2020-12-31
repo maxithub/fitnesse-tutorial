@@ -2,5 +2,7 @@
 Test
 ---
 !4 Import the neccessary slim/fixtures
-| import |
-| max.lab.fitnesse.s01 |
+|import                         |
+|max.lab.fitnesse.s01           |
+|max.lab.fitnesse.s02           |
+|smartrics.rest.fitnesse.fixture|

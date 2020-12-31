@@ -1,0 +1,47 @@
+#!define REMOTE_DEBUG_COMMAND {-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5050}
+
+!***> Step #1: Create Book
+
+!| Table: Build Json |
+| isbn | title | price:number |
+| 123-456-7891 | FitNesse In Action | 29.99 | $payload= |
+
+!| Table: Rest Fixture | http://localhost:8081 |
+| setHeader | Content-Type : application/json;charset=UTF-8 |
+| setBody | $payload |
+| POST | /book | 201 | | |
+| let | id | header | Location:http://localhost:8081/book/(.+) | |
+
+*!
+!***> Step #2: Get the book that just created, and verify the properties
+
+!| Table: Rest Fixture | http://localhost:8081 |
+| setHeader | Content-Type : application/json;charset=UTF-8!-
+-!Accept : application/json |
+| GET | /book/$id | 200 | | jsonbody.isbn == '123-456-7891' !-
+-!jsonbody.title == 'FitNesse In Action' !-
+-!jsonbody.price == 29.99 |
+
+*!
+!***> Step #3: Get all the books, and verify the properties
+
+!| Table: Rest Fixture | http://localhost:8081 |
+| setHeader | Content-Type : application/json;charset=UTF-8!-
+-!Accept : application/json |
+| GET | /book/ | 200 | | |
+| let | payload | js | response.body | |
+
+!| Query: Verify Payload | $payload | $._embedded.books |
+| isbn | title | price |
+| 123-456-7890 | Reactive Spring | 19.99 |
+| 123-456-7891 | FitNesse In Action | 29.99 |
+
+*!
+!***> Step #4: Delete the books
+
+!| Table: Rest Fixture | http://localhost:8081 |
+| setHeader | Content-Type : application/json;charset=UTF-8!-
+-!Accept : application/json |
+| DELETE | /book/$id | 204 | | |
+
+*!
