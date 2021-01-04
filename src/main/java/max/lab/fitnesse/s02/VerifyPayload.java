@@ -34,7 +34,7 @@ public class VerifyPayload {
     @SneakyThrows
     public List<List<List<String>>> query() {
         var objectMapper = new ObjectMapper();
-        JsonNode jsonNode = readJsonNode(objectMapper);
+        var jsonNode = readJsonNode(objectMapper);
         var list = new ArrayList<List<List<String>>>();
         if (jsonNode.isArray()) {
             for (var subNode : jsonNode) {
@@ -50,12 +50,10 @@ public class VerifyPayload {
     private void ensureSameColumnsForAllRows(ArrayList<List<List<String>>> list) {
         var colNameForRows = new ArrayList<Set<String>>();
         var allColNames = new HashSet<String>();
-        for (Object row : list) {
-            var aRow = (List<Object>) row;
+        for (var row : list) {
             var colNames = new HashSet<String>();
-            for (Object cell : aRow) {
-                var aCell = (List<Object>) cell;
-                var name = (String) aCell.get(0);
+            for (var cell : row) {
+                var name = cell.get(0);
                 colNames.add(name);
                 allColNames.add(name);
             }
